@@ -1,0 +1,223 @@
+:root {
+  color-scheme: light;
+  font-family: "Avenir Next", "Trebuchet MS", "Segoe UI", sans-serif;
+  line-height: 1.45;
+  font-weight: 500;
+  background: radial-gradient(circle at 20% -10%, #ffe7c2 0%, transparent 45%),
+    radial-gradient(circle at 100% 0%, #f5d6e9 0%, transparent 42%),
+    linear-gradient(155deg, #f6f9ff 0%, #fff8ef 45%, #f7fff3 100%);
+  color: #1b2340;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+}
+
+#root {
+  min-height: 100vh;
+}
+
+.shell {
+  width: min(1100px, calc(100vw - 2rem));
+  margin: 1.5rem auto 3rem;
+  display: grid;
+  gap: 1rem;
+}
+
+.hero {
+  background: linear-gradient(120deg, #072f5f 0%, #145ba7 45%, #2a86d1 100%);
+  color: #f6fbff;
+  border-radius: 24px;
+  padding: 2rem;
+  box-shadow: 0 24px 64px rgba(21, 58, 111, 0.35);
+}
+
+.hero h1 {
+  margin: 0.25rem 0 0.75rem;
+  font-size: clamp(1.8rem, 4vw, 2.6rem);
+  line-height: 1.1;
+}
+
+.hero p {
+  margin: 0;
+  max-width: 68ch;
+}
+
+.kicker {
+  margin: 0;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  opacity: 0.85;
+  font-size: 0.75rem;
+}
+
+.panel {
+  background: rgba(255, 255, 255, 0.86);
+  border: 1px solid rgba(14, 68, 118, 0.12);
+  border-radius: 20px;
+  padding: 1rem;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 12px 30px rgba(28, 56, 91, 0.08);
+}
+
+.status-grid {
+  display: grid;
+  gap: 0.75rem;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+}
+
+.label {
+  margin: 0;
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+  color: #4f5f82;
+}
+
+.value {
+  margin: 0.3rem 0 0;
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: #10214f;
+}
+
+.progress-wrap {
+  margin-top: 1rem;
+}
+
+.progress-meta {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.9rem;
+  margin-bottom: 0.4rem;
+}
+
+.progress-bar {
+  height: 14px;
+  border-radius: 999px;
+  background: rgba(43, 89, 179, 0.15);
+  overflow: hidden;
+}
+
+.progress-fill {
+  height: 100%;
+  border-radius: inherit;
+  background: linear-gradient(90deg, #1f6bff 0%, #24c7aa 100%);
+  transition: width 280ms ease;
+}
+
+.controls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+}
+
+button {
+  border: none;
+  border-radius: 999px;
+  padding: 0.66rem 1rem;
+  font-size: 0.95rem;
+  font-weight: 700;
+  cursor: pointer;
+  background: #1b63f1;
+  color: #fff;
+  box-shadow: 0 8px 20px rgba(35, 89, 192, 0.28);
+}
+
+button.secondary {
+  background: #eef3ff;
+  color: #133164;
+  box-shadow: none;
+}
+
+button:disabled {
+  cursor: not-allowed;
+  opacity: 0.55;
+}
+
+.details p {
+  margin: 0.25rem 0;
+}
+
+.milestone-track h2,
+.code-panel h2 {
+  margin: 0 0 0.8rem;
+}
+
+.milestones {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: 0.7rem;
+}
+
+.milestone {
+  border: 1px solid rgba(27, 96, 178, 0.2);
+  border-radius: 14px;
+  padding: 0.75rem;
+  text-align: center;
+  background: #f7fbff;
+}
+
+.milestone span {
+  display: block;
+  font-size: 1.3rem;
+  font-weight: 800;
+}
+
+.milestone small {
+  color: #5e7394;
+}
+
+.milestone.reached {
+  background: linear-gradient(135deg, #d8f8e6 0%, #f0fffb 100%);
+  border-color: rgba(22, 160, 133, 0.45);
+}
+
+.code-panel pre {
+  margin: 0;
+  border-radius: 14px;
+  background: #0c1634;
+  color: #d6e4ff;
+  overflow-x: auto;
+  padding: 0.9rem;
+}
+
+.note,
+.error {
+  margin: 0;
+  padding: 0.8rem 1rem;
+  border-radius: 12px;
+}
+
+.note {
+  background: #ebf3ff;
+  color: #20457f;
+}
+
+.error {
+  background: #ffe8ec;
+  color: #911c3f;
+}
+
+@media (max-width: 700px) {
+  .shell {
+    width: calc(100vw - 1rem);
+    margin: 0.5rem auto 2rem;
+  }
+
+  .hero,
+  .panel {
+    border-radius: 16px;
+    padding: 0.9rem;
+  }
+
+  button {
+    width: 100%;
+  }
+}

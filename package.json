@@ -1,0 +1,14 @@
+{
+  "name": "streakit-dev-kit",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Public-facing docs and SDK demo app for StreaKit.",
+  "packageManager": "pnpm@9.15.4",
+  "scripts": {
+    "dev:docs": "pnpm --filter @streakit/docs dev",
+    "dev:demo": "pnpm --filter @streakit/demo dev",
+    "build": "pnpm -r build",
+    "preview:docs": "pnpm --filter @streakit/docs preview",
+    "preview:demo": "pnpm --filter @streakit/demo preview"
+  }
+}

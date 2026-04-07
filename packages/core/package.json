@@ -1,0 +1,50 @@
+{
+  "name": "@streakit/core",
+  "version": "1.0.0",
+  "description": "Headless streak engine \u2014 track, milestone, reward.",
+  "type": "module",
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.cjs"
+    },
+    "./adapters": {
+      "types": "./dist/adapters.d.ts",
+      "import": "./dist/adapters.mjs",
+      "require": "./dist/adapters.cjs"
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsup",
+    "dev": "tsup --watch",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "typecheck": "tsc --noEmit",
+    "lint": "eslint src/",
+    "clean": "rm -rf dist"
+  },
+  "devDependencies": {
+    "tsup": "^8.4.0",
+    "typescript": "^5.7.0",
+    "vitest": "^3.0.0"
+  },
+  "keywords": [
+    "streak",
+    "animation",
+    "habit-tracker",
+    "gamification"
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/streakit/streakit#readme",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/streakit/streakit"
+  }
+}
