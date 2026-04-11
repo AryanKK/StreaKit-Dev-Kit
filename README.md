@@ -7,6 +7,7 @@ Public docs + a working sample application for developers integrating the `@stre
 - `apps/docs`: public-facing documentation site (VitePress)
 - `apps/demo`: browser app showing a live `@streakit/core` integration
 - `packages/core`: local SDK package consumed by the demo app
+- `examples/animation-showcase-standalone.html`: single-file **Animation Library** preview (inlined bundle; open locally or host as static HTML)
 
 ## Quick start
 
