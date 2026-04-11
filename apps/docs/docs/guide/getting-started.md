@@ -1,5 +1,11 @@
 # Getting Started
 
+::: warning Personal project in development
+
+**StreaKit** is a personal project in active development—not a production guarantee. APIs and packages may change.
+
+:::
+
 ## 1. Install packages
 
 ```bash

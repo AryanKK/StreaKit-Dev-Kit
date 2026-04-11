@@ -1,5 +1,11 @@
 # Deployment
 
+::: warning Personal project in development
+
+**StreaKit** is a personal project in active development. Deployment guidance is suggestive only until the project stabilizes.
+
+:::
+
 ## Recommended split
 
 - Deploy `apps/docs` as your public developer portal.

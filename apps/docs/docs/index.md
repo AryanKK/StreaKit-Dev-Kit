@@ -19,3 +19,9 @@ features:
   - title: Real Demo App
     details: Ship-ready sample app included in this repo so developers can test locally.
 ---
+
+::: warning Personal project in development
+
+**StreaKit** (`@streakit`) is a **personal project in active development**. It is not a production-ready or commercial offering. APIs, documentation, the SDK showcase, and the animation library preview may change without notice.
+
+:::

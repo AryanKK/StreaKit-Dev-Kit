@@ -1,5 +1,11 @@
 # React Integration
 
+::: warning Personal project in development
+
+**StreaKit** is a personal project in active development. `@streakit/react` integration patterns may change.
+
+:::
+
 If you want hooks and UI helpers, add `@streakit/react`.
 
 ## Install

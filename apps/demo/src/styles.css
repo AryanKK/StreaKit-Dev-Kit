@@ -29,6 +29,17 @@ body {
   gap: 1rem;
 }
 
+.dev-notice {
+  margin: 0;
+  padding: 0.65rem 1rem;
+  border-radius: 12px;
+  background: #fff8e6;
+  border: 1px solid #e8c96b;
+  color: #4a3b12;
+  font-size: 0.9rem;
+  line-height: 1.45;
+}
+
 .hero {
   background: linear-gradient(120deg, #072f5f 0%, #145ba7 45%, #2a86d1 100%);
   color: #f6fbff;

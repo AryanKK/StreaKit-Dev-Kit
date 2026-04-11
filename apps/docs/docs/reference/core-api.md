@@ -1,5 +1,11 @@
 # Core API
 
+::: warning Personal project in development
+
+**StreaKit** is a personal project in active development. This reference may drift from the codebase between releases.
+
+:::
+
 ## `StreaKit`
 
 - `new StreaKit(config)`

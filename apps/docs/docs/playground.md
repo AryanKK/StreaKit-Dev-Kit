@@ -1,5 +1,11 @@
 # Playground
 
+::: warning Personal project in development
+
+This playground ships with a **personal project in active development**. Treat it as a demo harness, not a production reference.
+
+:::
+
 The playground is a live app that uses `@streakit/core` so developers can test a full integration.
 
 ## Run locally

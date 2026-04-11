@@ -82,6 +82,10 @@ export default function App() {
 
   return (
     <main className="shell">
+      <aside className="dev-notice" role="note">
+        <strong>Personal project in development.</strong> StreaKit is not a production or commercial product; APIs and this
+        demo may change.
+      </aside>
       <section className="hero">
         <p className="kicker">StreaKit Dev Playground</p>
         <h1>SDK integration you can run in under a minute</h1>
