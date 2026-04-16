@@ -34,3 +34,7 @@ pnpm build
 - Deploy `apps/demo` as a companion playground linked from docs.
 
 This keeps stable docs and hands-on SDK usage in one repository.
+
+## License
+
+This repository is licensed under the [MIT License](LICENSE).
