@@ -35,6 +35,10 @@ pnpm build
 
 This keeps stable docs and hands-on SDK usage in one repository.
 
+## Contributing
+
+Contributions are welcome. See [CONTRIBUTING.md](CONTRIBUTING.md) for setup, checks to run before a PR, and how the workspace is organized.
+
 ## License
 
 This repository is licensed under the [MIT License](LICENSE).
