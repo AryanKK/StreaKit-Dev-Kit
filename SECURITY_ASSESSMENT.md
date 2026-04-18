@@ -2,7 +2,7 @@
 
 **Repository:** [StreaKit-Dev-Kit](https://github.com/AryanKK/StreaKit-Dev-Kit) (public)  
 **Document date:** 2026-04-18  
-**Assessment scope:** Entire Git history on `main` at commit `92193975408f17184a3d235b0f885527cd527706`, plus dependency and architecture review documented below.
+**Assessment scope:** Entire Git history on `main` through the **tip of `main`** on the document date (resolve with `git rev-parse HEAD` after pulling latest), plus dependency and architecture review documented below.
 
 This document is an **engineering self-assessment** for maintainers and contributors. It is **not legal advice**. For compliance, insurance, or contractual liability, consult a qualified attorney.
 
@@ -12,7 +12,7 @@ This document is an **engineering self-assessment** for maintainers and contribu
 
 | Question | Summary |
 |----------|---------|
-| **Secret exposure across all commits?** | **Gitleaks** scanned **every commit** in this clone’s history (**7 commits**); **no leaks detected**. |
+| **Secret exposure across all commits?** | **Gitleaks** scanned **every commit** on `main` (**9 commits**); **no leaks detected**. Earlier baselines: **8 commits**, **0 findings** @ `068ee40`; **7 commits**, **0 findings** @ `9219397` (before the security assessment file existed). |
 | **Known dependency issues (current tree)?** | **`pnpm audit`:** **2 moderate** findings in the **Vite / esbuild dev toolchain** (development server / optimized-deps paths), not in the shipped SDK runtime alone. |
 | **Fit to stay public / open source?** | **Yes**, for a **client-side dev kit** with **no committed secrets**, **MIT** license, and **clear “personal project / not production”** disclaimers—subject to the **caveats** in this document. |
 | **“Safe” for developers to use?** | **Reasonable for experimentation, learning, and non-critical integrations**, with the same caveats as most small OSS: **no warranty**, **APIs may change**, **integrators must handle XSS/storage and their own threat model**. |
@@ -31,7 +31,7 @@ This document is an **engineering self-assessment** for maintainers and contribu
 
 ### 1.2 Commits included in the scan
 
-The following **7** commits were present on `main` at assessment time (oldest → newest):
+There are **9** commits on `main` at this assessment (oldest → newest). The first **eight** are:
 
 1. `3101b2b` — Scaffold dev kit with docs portal and SDK demo app  
 2. `210180a` — Add standalone Animation Library HTML example  
@@ -40,12 +40,23 @@ The following **7** commits were present on `main` at assessment time (oldest �
 5. `fd98c06` — Add core package README with project disclaimer  
 6. `4919d1e` — Add contributing guide for open-source collaborators  
 7. `9219397` — Fix CI: let pnpm version come from packageManager only  
+8. `068ee40` — Add security assessment with full-history gitleaks and dependency audit  
+
+The **ninth** commit is the then-current tip of `main` and updates only this assessment file; identify it with `git log -1 --oneline main`.
 
 ### 1.3 Result
 
+Gitleaks **v8.30.1**, command `gitleaks detect --source .` (full Git history):
+
 ```
-7 commits scanned
-no leaks found
+# When HEAD was 9219397 (pre–security-assessment document):
+7 commits scanned — no leaks found
+
+# When HEAD was 068ee40 (assessment file on main):
+8 commits scanned — no leaks found
+
+# When HEAD was the 9th commit on main (tip — assessment record aligned to full history):
+9 commits scanned — no leaks found
 ```
 
 **Interpretation:** No Gitleaks rules fired on historical diffs for common secret patterns (API keys, tokens, private keys, etc.). This **does not** guarantee absence of subtle data leaks (e.g. business-sensitive logic you did not intend to publish); it addresses **typical credential leakage**.
@@ -144,9 +155,9 @@ Both flow through **Vite / VitePress / demo dev dependencies** (see `pnpm audit`
 | Item | Value |
 |------|--------|
 | Host | Local developer machine (macOS) |
-| Gitleaks | v8.30.1 — **7 commits**, **0 findings** |
+| Gitleaks | v8.30.1 — **7 / 8 / 9 commits** scanned at `9219397`, `068ee40`, and **tip of `main`** respectively; **0 findings** each (2026-04-18, macOS) |
 | `pnpm audit` | **2 moderate** (esbuild, vite); see §2 |
-| `HEAD` | `92193975408f17184a3d235b0f885527cd527706` |
+| `HEAD` (this revision) | Use `git rev-parse HEAD` on a fresh clone after `git pull` (documentation-only tip after `068ee40`) |
 
 ---
 
